@@ -14,6 +14,6 @@ int main(void)
 	{
 		putchar(letra);
 	}
-	putchar(`\n');
+	putchar(10);
 	return (0);
 }
