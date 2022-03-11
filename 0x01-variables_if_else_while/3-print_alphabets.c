@@ -1,8 +1,8 @@
-#include(stdio.h)
+#include <stdio.h>
 /**
- * main - program entry point
+ * main - Prints the alphabet in lower case
  *
- * Return: 0 on success, Error code otherwise
+ * Return: 0
  */
 int main(void)
 {
@@ -14,11 +14,11 @@ int main(void)
 	{
 		if (n < 26)
 		{
-			putchar (a);
+			putchar(a);
 			a++;
 		} else
 		{
-			putchar (A);
+			putchar(A);
 			A++;
 		}
 		n++;
