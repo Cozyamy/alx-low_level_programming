@@ -5,13 +5,14 @@
  * followed by a new line
  * Return: Always 0 (Success)
  */
+
 int main(void)
 {
-	char ch;
+	char letra;
 
-	for (ch = `a'; ch <= `z'; ch++)
+	for (letra = 'a' ; letra <= 'z' ; letra++)
 	{
-		putchar(ch);
+		putchar(letra);
 	}
 	putchar(`\n');
 	return (0);
