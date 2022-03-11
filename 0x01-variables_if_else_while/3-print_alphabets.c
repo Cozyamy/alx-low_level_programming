@@ -1,18 +1,28 @@
 #include(stdio.h)
-
 /**
- * main - prints the alphabet in lowercase, and then in uppercase,
- * followed by a new line
- * Return: Always 0 (success)
+ * main - program entry point
+ *
+ * Return: 0 on success, Error code otherwise
  */
 int main(void)
 {
-	int ch;
+	char a = 'a';
+	char A = 'A';
+	int n = 0;
 
-	for (ch = 'a'; ch <= 'z'; ch++)
-		putchar(ch);
-	for (ch = 'A'; ch <= 'Z'; ch++)
-		putchar(ch);
+	while (n < 52)
+	{
+		if (n < 26)
+		{
+			putchar(a);
+			a++;
+		} else
+		{
+			putchar(A);
+			A++;
+		}
+		n++;
+	}
 	putchar('\n');
 	return (0);
 }
