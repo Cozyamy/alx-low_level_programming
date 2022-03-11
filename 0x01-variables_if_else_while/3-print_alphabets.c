@@ -14,11 +14,11 @@ int main(void)
 	{
 		if (n < 26)
 		{
-			putchar(a);
+			putchar (a);
 			a++;
 		} else
 		{
-			putchar(A);
+			putchar (A);
 			A++;
 		}
 		n++;
