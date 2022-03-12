@@ -4,7 +4,7 @@
  * main - Print the numbers of 00 to 99.
  *
  * Return: 0
- * */
+ */
 
 int main(void)
 {
