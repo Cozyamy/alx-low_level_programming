@@ -1,40 +1,30 @@
 #include <stdio.h>
+
 /**
- * main - Program entry point
+ * main - Print the numbers of 00 to 99.
  *
- * Return: 0on success. Error code otherwise
- */
+ * Return: 0
+ * */
+
 int main(void)
 {
-	int n = 0;
-	int i;
+	int num1, num2;
 
-	while (n <= 99)
+	for (num1 = 48 ; num1 < 58 ; num1++)
 	{
-		i = n;
-		while (i <99)
+		num2 = 49 + (num1 - 48);
+		for (; num2 < 58 ; num2++)
 		{
-			if (i / 10 % 10 > i % 10)
-				break;
-			i /= 10;
-			if (i == 0)
+			putchar(num1);
+			putchar(num2);
+			if (num1 == 56 && num2 == 57)
 			{
-				if ((n % 11) != 0 && n !=11)
-				{
-					putchar((n / 10) + '0');
-					putchar((n % 10) + '0');
-					if (n < 89)
-					{
-						putchar(',');
-						putchar(' '>;
-					}
-				}
-				break;
+				continue;
 			}
+			putchar(',');
+			putchar(' ');
 		}
-		n++;
 	}
-	putchar ('\n');
+	putchar(10);
 	return (0);
 }
-	
