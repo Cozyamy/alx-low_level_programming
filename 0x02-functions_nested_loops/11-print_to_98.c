@@ -1,14 +1,18 @@
 #include "main.h"
 
 /**
- * add - returns the sum of its parameters
- * @a: int type number
- * @b: int type number
+ * print_to_98(int n) - Prints all natural numbers
+ * from n to 98
  *
  */
 
-int add(int a, int b)
-
+void print_to_98(int n);
 {
-	return (a + b);
+	print_to_98(0);
+	print_to_98(98);
+	print_to_98(111);
+	print_to_98(81);
+	print_to_98(-10);
+
+	return (0);
 }
