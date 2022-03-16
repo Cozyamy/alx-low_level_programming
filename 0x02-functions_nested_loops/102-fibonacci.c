@@ -13,13 +13,13 @@ int main(void)
 	a = 1;
 	b = 2;
 
-	for (ii = 0,sum =0; a < 4000000; i++)
+	for (i = 0,sum =0; a < 4000000; i++)
 	{
 		if (!(a % 2))
 			sum += a;
 		b = a + b;
 		a = b - a;
 	}
-	printf("%1d\n", sum);
+	printf("%ld\n", sum);
 	return (0);
 }
