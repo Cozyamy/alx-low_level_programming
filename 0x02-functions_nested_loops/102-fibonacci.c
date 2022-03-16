@@ -8,18 +8,36 @@
 
 int main(void)
 {
-	long int i, a, b, sum;
+	int i = 0
+	long int a = 0, b = 1, next;
 
-	a = 1;
-	b = 2;
-
-	for (i = 0,sum =0; a < 4000000; i++)
+	while (i < 50)
 	{
-		if (!(a % 2))
-			sum += a;
-		b = a + b;
-		a = b - a;
+		next = a + b;
+		a = b;
+		b = next;
+		printf("%lu", next);
+
+		if (i < 49)
+		{
+			printf(", ");
+		}
+		i++;
 	}
-	printf("%ld\n", sum);
+	putchar('\n');
 	return (0);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
