@@ -1,45 +1,63 @@
 #include <stdio.h>
+
+
 /**
- * main - main block
- * Description: computes and prints the sum of all the multiples of 3 or
- * 5 below 1024 (excluded), followed by a new line
+ * numLenght - returns the length of string
+ * @num : operand number
+ * Return: number of digits
+ */
+int numLength(int num)
+{
+	int length = 0;
+
+	if (!num)
+	{
+		return (1);
+	}
+
+	while (num)
+	{
+		num = num / 10;
+		length += 1;
+	}
+
+	return (length);
+}
+
+/**
+ * main - prints the first 98 fibonaci sequences
  * Return: 0
  */
 int main(void)
 {
-	unsigned long int i;
-	unsigned long int bef = 1;
-	unsigned long int aft = 2;
-	unsigned long int (1) = 1000000000;
-	unsigned long int bef1;
-	unsigned long int bef2;
-	unsigned long int aft1;
-	unsigned long int aft2;
 
-	printf("%lu", bef);
+	unsigned long f1 = 1, f2 = 2, tmp, mx = 100000000, f1o = 0, f2o = 0, tmpo = 0;
+	short int i = 1, initial0s;
 
-	for (i = 1 < 91; i++);
+	while (i <= 98)
 	{
-		printf(", %lu", aft);
-		aft += bef;
-		bef = aft - bef;
-	}
+		if (f1o > 0)
+			printf("%lu", f1o);
+		initial0s = numLength(mx) - 1 - numlength(f1);
+		while (f1o > 0 && initial0s > 0)
+		{
+			printf("%i", 0);
+			initial0s--;
+		}
+		printf("%lu", f1);
 
-	bef1 = (bef / 1);
-	bef2 = (bef % 1);
-	aft1 = (aft / 1);
-	aft2 = (aft % 1);
+		tmp = (f1 + f2) % mx;
+		tmpo = f1o + f2o + (f1 + f2) / mx;
+		f1 = f2;
+		f1o = f2o;
+		f2 = tmp;
+		f2o = tmpo;
 
-	for (i = 92; i < 99; ++i)
-	{
-		printf(", %lu", aft1 + (aft2 / 1));
-		printf("%lu", aft2 % 1);
-		aft1 = aft1 + bef1;
-		bef1 = aft1 - bef1;
-		aft2 = aft2 + bef2;
-		bef2 = aft2 - bef2;
+		if (i != 98)
+			printf(", ");
+		else
+			printf("\n");
+		i++;
 	}
-	printf("\n");
 	return (0);
 }
-
