@@ -13,7 +13,7 @@ int main(void)
 	for (i = 1023, sum = 0; i; i--)
 		if (!(i % 3) || !(i % 5))
 		sum += i;
-_putchar("%d\n", sum);
+printf("%d\n", sum);
 
 return (0);
 }
