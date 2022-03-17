@@ -2,22 +2,26 @@
 
 
 /**
- * print_triangle - prints a triangle.
- * @size: numbers of lines.
- * Return: no return.
+ * print_triangle - print backwards triangle of n size
+ * @size: size of square
  */
-void prin_triangle(int size)
-{
-	int i, j;
 
-	for (i = 0; i < size; i++)
+
+void print_triangle(int size)
+{
+	int x, y, k, w, t;
+	w = 1;
+	t = size;
+	if (size <= 0)
+		_putchar('\n');
+	for (y = 0; y < size; y++)
 	{
-		for (j = 1;  j < (size - i); j++)
+		for (x = 0; x < (t - 1); x++)
 			_putchar(' ');
-		for (j--; j < size; j++)
-			_putchar(35);
-		if (i < (size - 1))
-			_putchar('\n');
+		for (k = 0; k < w; k++)
+			_putchar('#');
+		_putchar('\n');
+		t--;
+		w++;
 	}
-	_putchar('\n');
 }
