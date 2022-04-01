@@ -1,14 +1,12 @@
-#include "main.h"
-
+#include <stdio.h>
 /**
- * _isupper - checks for uppercase character
- * @c: character that is checked
- * Return: if uppercase returns 0 otherwise
+ * main - prints its name, followed by a new line.
+ * @argc: number of command line arguments.
+ * @argv: array that contains the program command line arguments.
+ * Return: 0 - success.
  */
-
-int _isupper(int c)
+int main(int argc __attribute__((unused)), char *argv[])
 {
-if (c >= 'A' && c <= 'Z')
-return (1);
-return (0);
+	printf("%s\n", argv[0]);
+	return (0);
 }
