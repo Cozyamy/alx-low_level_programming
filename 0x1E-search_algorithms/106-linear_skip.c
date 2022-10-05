@@ -1,39 +1,47 @@
 #include "search_algos.h"
+#include <math.h>
+
+#define PRINT_CHECKED(idx, item) \
+	printf("Value checked at index [%lu] = [%d]\n", (idx), (item))
+
+#define PRINT_BOUNDED(low, high) \
+	printf("Value found between indexes [%lu] and [%lu]\n", (low), (high))
 
 /**
-  * linear_skip - find value in skip list
-  * @list: skip list
-  * @value: value to search for
-  *
-  * Return: return node where value resides or NULL if not found
-  */
+ * linear_skip - search for a value in a sorted list of integers
+ * @list: list of values
+ * @value: value to locate
+ *
+ * Return: If value is not present in list or list is NULL, return -1.
+ * Otherwise, returh the first node where value is located.
+ */
 skiplist_t *linear_skip(skiplist_t *list, int value)
 {
-	unsigned int l, r;
-	skiplist_t *start, *end = list;
+	skiplist_t *tail = list;
 
-	if (!list)
-		return (NULL);
-	while (end->next && end->n < value)
+	if (list)
 	{
-		start = end;
-		if (end->express)
+		while (tail->express && value > tail->n)
 		{
-			end = end->express;
-			printf("Value checked at index [%d] = [%d]\n", (int)end->index, end->n);
+			list = tail;
+			tail = tail->express;
+			PRINT_CHECKED(tail->index, tail->n);
 		}
-		else
-			while (end->next)
-				end = end->next;
-	}
-	l = (int)start->index;
-	r = (int)end->index;
-	printf("Value found between indexes [%d] and [%d]\n", l, r);
-	for (; start && l <= r; l++, start = start->next)
-	{
-		printf("Value checked at index [%d] = [%d]\n", l, start->n);
-		if (start->n == value)
-			return (start);
+		if (value > tail->n)
+		{
+			list = tail;
+			while (tail->next)
+				tail = tail->next;
+		}
+		PRINT_BOUNDED(list->index, tail->index);
+		tail = tail->next;
+		while (list != tail)
+		{
+			PRINT_CHECKED(list->index, list->n);
+			if (list->n == value)
+				return (list);
+			list = list->next;
+		}
 	}
 	return (NULL);
 }
